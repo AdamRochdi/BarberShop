@@ -1,0 +1,23 @@
+[
+  {
+    "id": "BR-001",
+    "name": "Classic Barber Co.",
+    "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+    "foundedYear": 1995,
+    "isPremium": true
+  },
+  {
+    "id": "BR-002",
+    "name": "Urban Fade",
+    "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+    "foundedYear": 2010,
+    "isPremium": false
+  },
+  {
+    "id": "BR-003",
+    "name": "Gentleman's Grooming",
+    "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+    "foundedYear": 2005,
+    "isPremium": true
+  }
+]

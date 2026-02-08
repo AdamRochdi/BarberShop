@@ -1,0 +1,182 @@
+[
+  {
+    "id": "PR-001",
+    "name": "Premium Hair Pomade",
+    "description": "Water-based pomade with a strong hold and natural shine, perfect for classic hairstyles.",
+    "age": 6,
+    "isActive": true,
+    "birthDate": "2017-03-15",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/pomade-premium.png",
+    "category": "Hair Care",
+    "features": ["Strong Hold", "Natural Shine", "Water-Based"],
+    "brand": {
+      "id": "BR-001",
+      "name": "Classic Barber Co.",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "foundedYear": 1995,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-002",
+    "name": "Beard Oil",
+    "description": "Nourishing beard oil to soften hair and promote healthy growth, with a subtle cedarwood scent.",
+    "age": 4,
+    "isActive": true,
+    "birthDate": "2019-07-10",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-oil.png",
+    "category": "Beard Care",
+    "features": ["Softens Hair", "Promotes Growth", "Cedarwood Scent"],
+    "brand": {
+      "id": "BR-003",
+      "name": "Gentleman's Grooming",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "foundedYear": 2005,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-003",
+    "name": "Barber Trimmer",
+    "description": "Professional barber trimmer with adjustable blades and long-lasting battery for home and salon use.",
+    "age": 2,
+    "isActive": false,
+    "birthDate": "2021-01-20",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-trimmer.png",
+    "category": "Tools",
+    "features": ["Adjustable Blades", "Long Battery Life", "Ergonomic Design"],
+    "brand": {
+      "id": "BR-002",
+      "name": "Urban Fade",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "foundedYear": 2010,
+      "isPremium": false
+    }
+  },
+  {
+    "id": "PR-004",
+    "name": "Shaving Cream",
+    "description": "Rich and creamy shaving cream for a smooth and comfortable shave, suitable for sensitive skin.",
+    "age": 7,
+    "isActive": true,
+    "birthDate": "2016-05-12",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/shaving-cream.png",
+    "category": "Shaving",
+    "features": ["Sensitive Skin", "Rich Foam", "Smooth Shave"],
+    "brand": {
+      "id": "BR-001",
+      "name": "Classic Barber Co.",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "foundedYear": 1995,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-005",
+    "name": "Beard Comb Set",
+    "description": "Set of 3 wooden beard combs for styling and detangling all beard lengths.",
+    "age": 5,
+    "isActive": true,
+    "birthDate": "2018-11-05",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-comb-set.png",
+    "category": "Beard Care",
+    "features": ["Wooden", "Durable", "Travel-Friendly"],
+    "brand": {
+      "id": "BR-003",
+      "name": "Gentleman's Grooming",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "foundedYear": 2005,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-006",
+    "name": "Styling Gel",
+    "description": "Strong hold styling gel that keeps hair in place all day without flaking.",
+    "age": 3,
+    "isActive": true,
+    "birthDate": "2020-02-28",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/styling-gel.png",
+    "category": "Hair Care",
+    "features": ["Strong Hold", "No Flaking", "All Day Hold"],
+    "brand": {
+      "id": "BR-002",
+      "name": "Urban Fade",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "foundedYear": 2010,
+      "isPremium": false
+    }
+  },
+  {
+    "id": "PR-007",
+    "name": "Aftershave Balm",
+    "description": "Calming aftershave balm that soothes skin after shaving and reduces redness.",
+    "age": 6,
+    "isActive": true,
+    "birthDate": "2017-08-15",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/aftershave-balm.png",
+    "category": "Shaving",
+    "features": ["Soothes Skin", "Reduces Redness", "Non-Greasy"],
+    "brand": {
+      "id": "BR-001",
+      "name": "Classic Barber Co.",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "foundedYear": 1995,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-008",
+    "name": "Beard Trimming Scissors",
+    "description": "Precision scissors for trimming and shaping beards, made from stainless steel.",
+    "age": 4,
+    "isActive": true,
+    "birthDate": "2019-03-22",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-scissors.png",
+    "category": "Tools",
+    "features": ["Stainless Steel", "Precision Cutting", "Ergonomic Handle"],
+    "brand": {
+      "id": "BR-003",
+      "name": "Gentleman's Grooming",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "foundedYear": 2005,
+      "isPremium": true
+    }
+  },
+  {
+    "id": "PR-009",
+    "name": "Matte Hair Clay",
+    "description": "Matte finish hair clay with medium hold for textured hairstyles.",
+    "age": 3,
+    "isActive": true,
+    "birthDate": "2020-06-10",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/hair-clay.png",
+    "category": "Hair Care",
+    "features": ["Matte Finish", "Medium Hold", "Textured Look"],
+    "brand": {
+      "id": "BR-002",
+      "name": "Urban Fade",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "foundedYear": 2010,
+      "isPremium": false
+    }
+  },
+  {
+    "id": "PR-010",
+    "name": "Barber Cape",
+    "description": "Durable barber cape to protect clients’ clothing during haircuts and styling.",
+    "age": 5,
+    "isActive": true,
+    "birthDate": "2018-09-30",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-cape.png",
+    "category": "Tools",
+    "features": ["Water-Resistant", "Adjustable Neck", "Lightweight"],
+    "brand": {
+      "id": "BR-001",
+      "name": "Classic Barber Co.",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "foundedYear": 1995,
+      "isPremium": true
+    }
+  }
+]
