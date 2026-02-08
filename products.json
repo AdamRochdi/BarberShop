@@ -6,13 +6,13 @@
     "age": 6,
     "isActive": true,
     "birthDate": "2017-03-15",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/pomade-premium.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/pomade-premium.jpeg",
     "category": "Hair Care",
     "features": ["Strong Hold", "Natural Shine", "Water-Based"],
     "brand": {
       "id": "BR-001",
       "name": "Classic Barber Co.",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.jpeg",
       "foundedYear": 1995,
       "isPremium": true
     }
@@ -24,13 +24,13 @@
     "age": 4,
     "isActive": true,
     "birthDate": "2019-07-10",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-oil.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-oil.jpeg",
     "category": "Beard Care",
     "features": ["Softens Hair", "Promotes Growth", "Cedarwood Scent"],
     "brand": {
       "id": "BR-003",
       "name": "Gentleman's Grooming",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.jpeg",
       "foundedYear": 2005,
       "isPremium": true
     }
@@ -42,13 +42,13 @@
     "age": 2,
     "isActive": false,
     "birthDate": "2021-01-20",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-trimmer.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-trimmer.jpeg",
     "category": "Tools",
     "features": ["Adjustable Blades", "Long Battery Life", "Ergonomic Design"],
     "brand": {
       "id": "BR-002",
       "name": "Urban Fade",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.jpeg",
       "foundedYear": 2010,
       "isPremium": false
     }
@@ -60,13 +60,13 @@
     "age": 7,
     "isActive": true,
     "birthDate": "2016-05-12",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/shaving-cream.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/shaving-cream.jpeg",
     "category": "Shaving",
     "features": ["Sensitive Skin", "Rich Foam", "Smooth Shave"],
     "brand": {
       "id": "BR-001",
       "name": "Classic Barber Co.",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.jpeg",
       "foundedYear": 1995,
       "isPremium": true
     }
@@ -78,13 +78,13 @@
     "age": 5,
     "isActive": true,
     "birthDate": "2018-11-05",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-comb-set.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-comb-set.jpeg",
     "category": "Beard Care",
     "features": ["Wooden", "Durable", "Travel-Friendly"],
     "brand": {
       "id": "BR-003",
       "name": "Gentleman's Grooming",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.jpeg",
       "foundedYear": 2005,
       "isPremium": true
     }
@@ -96,13 +96,13 @@
     "age": 3,
     "isActive": true,
     "birthDate": "2020-02-28",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/styling-gel.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/styling-gel.jpeg",
     "category": "Hair Care",
     "features": ["Strong Hold", "No Flaking", "All Day Hold"],
     "brand": {
       "id": "BR-002",
       "name": "Urban Fade",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.jpeg",
       "foundedYear": 2010,
       "isPremium": false
     }
@@ -114,13 +114,13 @@
     "age": 6,
     "isActive": true,
     "birthDate": "2017-08-15",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/aftershave-balm.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/aftershave-balm.jpeg",
     "category": "Shaving",
     "features": ["Soothes Skin", "Reduces Redness", "Non-Greasy"],
     "brand": {
       "id": "BR-001",
       "name": "Classic Barber Co.",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.jpeg",
       "foundedYear": 1995,
       "isPremium": true
     }
@@ -132,13 +132,13 @@
     "age": 4,
     "isActive": true,
     "birthDate": "2019-03-22",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-scissors.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/beard-scissors.jpeg",
     "category": "Tools",
     "features": ["Stainless Steel", "Precision Cutting", "Ergonomic Handle"],
     "brand": {
       "id": "BR-003",
       "name": "Gentleman's Grooming",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/gentlemans-grooming-logo.jpeg",
       "foundedYear": 2005,
       "isPremium": true
     }
@@ -150,13 +150,13 @@
     "age": 3,
     "isActive": true,
     "birthDate": "2020-06-10",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/hair-clay.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/hair-clay.jpeg",
     "category": "Hair Care",
     "features": ["Matte Finish", "Medium Hold", "Textured Look"],
     "brand": {
       "id": "BR-002",
       "name": "Urban Fade",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/urban-fade-logo.jpeg",
       "foundedYear": 2010,
       "isPremium": false
     }
@@ -168,13 +168,13 @@
     "age": 5,
     "isActive": true,
     "birthDate": "2018-09-30",
-    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-cape.png",
+    "imageUrl": "https://raw.githubusercontent.com/username/repo/main/images/barber-cape.jpeg",
     "category": "Tools",
     "features": ["Water-Resistant", "Adjustable Neck", "Lightweight"],
     "brand": {
       "id": "BR-001",
       "name": "Classic Barber Co.",
-      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.png",
+      "logoUrl": "https://raw.githubusercontent.com/username/repo/main/images/classic-barber-logo.jpeg",
       "foundedYear": 1995,
       "isPremium": true
     }
