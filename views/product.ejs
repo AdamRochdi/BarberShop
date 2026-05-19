@@ -4,36 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>product pagina</title>
 </head>
 
 <body>
-    <a href="/products">Back</a>
-    <h1>
-        <%= product.name %>
-    </h1>
+    <nav>
+        <a href="./index">Start</a>
+        <a href="./products">Home</a>
+    </nav>
+    <a class="back" href="/products">
+        <li><i class="fa-solid fa-arrow-left"></i>back</li>
+    </a>
+    <div class="card">
+        <h1>
+            <%= product.name %>
+        </h1>
 
-    <p><strong>Id:</strong>
-        <% product.id %>
-    </p>
-    <p><strong>Category:</strong>
-        <% product.category %>
-    </p>
-    <p><strong>Active:</strong>
-        <% product.isActive %>
-    </p>
-    <p><strong>Description:</strong>
-        <% product.description %>
-    </p>
+        <p><strong>Id:</strong>
+            <%= product.id %>
+        </p>
+        <p><strong>Category:</strong>
+            <%= product.category %>
+        </p>
+        <p><strong>Active:</strong>
+            <%= product.isActive %>
+        </p>
+        <p><strong>Description: </strong>
+            <%= product.description %>
+        </p>
 
-    <h3>Brand</h3>
-    <p>
-        <% product.brand.name %>
-    </p>
-    <p>Founded: <% produtc.brand.foundedYear %>
-    </p>
-    <p>Premium: <% produtc.brand.isPremium %>
-    </p>
+        <h3>Brand</h3>
+        <p><strong>Id:</strong>
+            <a href="/brands/<% product.brand.id %>">
+                <%= product.brand.id %>
+            </a>
+        </p>
+        <p><strong>Founded: <%= product.brand.foundedYear %>
+        </p>
+        <p><strong>Premium: <%= product.brand.isPremium %>
+        </p>
+    </div>
+    <h3>Features</h3>
+    <ul>
+        <% product.features.forEach(feature=> { %>
+            <li>
+                <% feature %>
+            </li>
+            <% }); %>
+    </ul>
 </body>
 
 </html>

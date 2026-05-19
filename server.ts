@@ -5,6 +5,8 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
     res.render("index")
 });
@@ -13,10 +15,10 @@ app.get("/products/:id", (req, res) => {
     const product = products.find((productId) => productId.id === req.params.id);
 
     if (!product) {
-        return res.status(404).send("Product not found")
+        return res.status(404).send("Product not found");
     }
 
-    res.json(product);
+    res.render("product", { product });
 });
 
 app.get("/products", (req, res) => {
@@ -50,6 +52,18 @@ app.get("/products", (req, res) => {
         order: order || "asc"
     });
 });
+
+app.get("/brands/:id", (req, res) => {
+    const product = products.find(productid => productid.brand.id === req.params.id)
+
+    if (!product) {
+        return res.status(404).send("Brand not found");
+    }
+
+    const brand = product.brand;
+
+    res.render("brand", { brand })
+})
 
 app.listen(3000, () => {
     console.log("server running");
