@@ -1,9 +1,10 @@
-export interface Guild {
+export interface Brand {
+    id: string;
     name: string;
-    guildMaster: string;
-    emblem: string;
-    founded: number;
-    motto: string;
+    logoUrl: string;
+    foundedYear: number;
+    isPremium: boolean;
+
 }
 
 export interface Character {
@@ -11,11 +12,10 @@ export interface Character {
     name: string;
     description: string;
     age: number;
-    active: boolean;
-    birthdate: string;
-    image: string;
-    rarity: string;
-    abilities: string[];
-    element: string;
-    guild: Guild;
+    isActive: boolean;
+    birthDate: string;
+    imageUrl: string;
+    category: string;
+    features: string[];
+    brand: Brand;
 }

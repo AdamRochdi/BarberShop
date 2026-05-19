@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>products</title>
+</head>
+
+<body>
+
+    <form method="GET" action="/products">
+        <input type="text" name="search" placeholder="Search products..">
+        <button type="submit">search</button>
+    </form>
+
+    <% const currentSort=sort || "" ; const currentOrder=order || "asc" ; function getNextOrder(column) { if
+        (currentSort===column && currentOrder==="asc" ) return "desc" ; return "asc" ; } function getIcon(column) { if
+        (currentSort===column && currentOrder==="asc" ) { return '<i class="fa-solid fa-arrow-up"></i>' ; } if
+        (currentSort===column && currentOrder==="desc" ) { return '<i class="fa-solid fa-arrow-down"></i>' ; }
+        return '<i class="fa-solid fa-sort"></i>' ; } %>
+
+        <table>
+            <tr>
+                <th>
+                    <a href="/products?sort=id&order=<%= getNextOrder('id') %>">
+                        id <%- getIcon("id") %>
+                    </a>
+                </th>
+
+                <th>
+                    <a href="/products?sort=name&order=<%= getNextOrder('name') %>">
+                        name <%- getIcon("name") %>
+                    </a>
+                </th>
+
+                <th>
+                    <a href="/products?sort=category&order=<%= getNextOrder('category') %>">
+                        category <%- getIcon("category") %>
+                    </a>
+                </th>
+
+                <th>
+                    <a href="/products?sort=isActive&order=<%= getNextOrder('isActive') %>">
+                        isActive <%- getIcon("isActive") %>
+                    </a>
+                </th>
+                <th>view</th>
+            </tr>
+
+            <% products.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <%= product.id %>
+                    </td>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>
+                        <%= product.category %>
+                    </td>
+                    <td>
+                        <%= product.isActive %>
+                    </td>
+                    <td>
+                        <a class="view-btn" href="/products/<%=product.id %>">View</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+</body>
+
+</html>

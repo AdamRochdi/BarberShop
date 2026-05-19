@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product pagina</title>
+</head>
+
+<body>
+    <a href="/products">Back</a>
+    <h1>
+        <%= product.name %>
+    </h1>
+
+    <p><strong>Id:</strong>
+        <% product.id %>
+    </p>
+    <p><strong>Category:</strong>
+        <% product.category %>
+    </p>
+    <p><strong>Active:</strong>
+        <% product.isActive %>
+    </p>
+    <p><strong>Description:</strong>
+        <% product.description %>
+    </p>
+
+    <h3>Brand</h3>
+    <p>
+        <% product.brand.name %>
+    </p>
+    <p>Founded: <% produtc.brand.foundedYear %>
+    </p>
+    <p>Premium: <% produtc.brand.isPremium %>
+    </p>
+</body>
+
+</html>
