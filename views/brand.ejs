@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>brand</title>
 </head>
 
 <body>
-    <nav>
-        <a href="./index">Start</a>
-        <a href="./products">Home</a>
-    </nav>
-    <h1>
-        <% brand.name %>
-    </h1>
+    <%- include("partials/nav") %>
+        <h1>
+            <%= brand.name %>
+        </h1>
 
-    <p>Id: <% brand.id %>
-    </p>
-    <p>Founded: <% brand.foundedYear %>
-    </p>
-    <p>Premium: <% brand.isPremium %>
-    </p>
+        <p>Id: <%= brand.id %>
+        </p>
+        <p>Founded: <%= brand.foundedYear %>
+        </p>
+        <p>Premium: <%= brand.isPremium %>
+        </p>
+        <div class="detail-image">
+            <img src="<%= brand.logoUrl %>" alt="<%= brand.name %>">
+        </div>
+
 </body>
 
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>brands</title>
+</head>
+
+<body>
+    <%- include("partials/nav") %>
+        <form method="GET" action="/brands">
+            <input type="text" name="search" placeholder="Search brands..">
+            <button type="submit">search</button>
+        </form>
+
+        <% const currentSort=sort || "" ; const currentOrder=order || "asc" ; function getNextOrder(column) { if
+            (currentSort===column && currentOrder==="asc" ) return "desc" ; return "asc" ; } function getIcon(column) {
+            if (currentSort===column && currentOrder==="asc" ) { return '<i class="fa-solid fa-arrow-up"></i>' ; } if
+            (currentSort===column && currentOrder==="desc" ) { return '<i class="fa-solid fa-arrow-down"></i>' ; }
+            return '<i class="fa-solid fa-sort"></i>' ; } %>
+
+            <table>
+                <tr>
+                    <th>
+                        <a href="/brands?sort=id&order=<%= getNextOrder('id') %>">
+                            id <%- getIcon("id") %>
+                        </a>
+                    </th>
+
+                    <th>
+                        <a href="/brands?sort=name&order=<%= getNextOrder('name') %>">
+                            name <%- getIcon("name") %>
+                        </a>
+                    </th>
+
+                    <th>
+                        <a href="/brands?sort=foundedYear&order=<%= getNextOrder('foundedYear') %>">
+                            foundedYear <%- getIcon("foundedYear") %>
+                        </a>
+                    </th>
+
+                    <th>
+                        <a href="/brands?sort=isPremium&order=<%= getNextOrder('isPremium') %>">
+                            isPremium <%- getIcon("isPremium") %>
+                        </a>
+                    </th>
+                    <th>Action</th>
+                </tr>
+
+                <% brands.forEach(brand=> { %>
+                    <tr>
+                        <td>
+                            <%= brand.id %>
+                        </td>
+                        <td>
+                            <%= brand.name %>
+                        </td>
+                        <td>
+                            <%= brand.foundedYear %>
+                        </td>
+                        <td>
+                            <%= brand.isPremium %>
+                        </td>
+
+                        <td>
+                            <a class="view-btn" href="/brands/<%= brand.id %>">
+                                View
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+</body>
+
+</html>

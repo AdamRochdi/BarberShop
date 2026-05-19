@@ -1,10 +1,13 @@
-import * as fs from "fs";
+
 import * as readline from "readline-sync";
-import products from "./data/products.json";
-import brands from "./data/brands.json";
+fetch("/data/products.json")
 import { Character } from "./interface";
 
-const data: Character[] = products as Character[];
+let data: Character[] = [];
+async function loadData() {
+    const response = await fetch("http://localhost:3000/data/products.json");
+    data = await response.json();
+}
 function showMenu() {
     console.log("\nWelcome to the JSON data viewer!\n");
     console.log("1. View all data");
@@ -70,9 +73,15 @@ function filterById() {
 }
 
 
-let running = true;
+async function main() {
+    await loadData();
 
-while (running) {
-    const choice = showMenu();
-    running = handleMenu(choice)
+    let running = true;
+
+    while (running) {
+        const choice = showMenu();
+        running = handleMenu(choice);
+    }
 }
+
+main();

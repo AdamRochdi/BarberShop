@@ -10,50 +10,42 @@
 </head>
 
 <body>
-    <nav>
-        <a href="./index">Start</a>
-        <a href="./products">Home</a>
-    </nav>
-    <a class="back" href="/products">
-        <li><i class="fa-solid fa-arrow-left"></i>back</li>
-    </a>
-    <div class="card">
-        <h1>
-            <%= product.name %>
-        </h1>
+    <%- include("partials/nav") %>
+        <a class="back" href="/products">
+            <li><i class="fa-solid fa-arrow-left"></i>back</li>
+        </a>
+        <div class="card">
+            <h1>
+                <%= product.name %>
+            </h1>
 
-        <p><strong>Id:</strong>
-            <%= product.id %>
-        </p>
-        <p><strong>Category:</strong>
-            <%= product.category %>
-        </p>
-        <p><strong>Active:</strong>
-            <%= product.isActive %>
-        </p>
-        <p><strong>Description: </strong>
-            <%= product.description %>
-        </p>
+            <p><strong>Id:</strong>
+                <%= product.id %>
+            </p>
+            <p><strong>Category:</strong>
+                <%= product.category %>
+            </p>
+            <p><strong>Active:</strong>
+                <%= product.isActive %>
+            </p>
+            <p><strong>Description: </strong>
+                <%= product.description %>
+            </p>
 
-        <h3>Brand</h3>
-        <p><strong>Id:</strong>
-            <a href="/brands/<% product.brand.id %>">
-                <%= product.brand.id %>
-            </a>
-        </p>
-        <p><strong>Founded: <%= product.brand.foundedYear %>
-        </p>
-        <p><strong>Premium: <%= product.brand.isPremium %>
-        </p>
-    </div>
-    <h3>Features</h3>
-    <ul>
-        <% product.features.forEach(feature=> { %>
-            <li>
-                <% feature %>
-            </li>
-            <% }); %>
-    </ul>
+            <h3>Brand</h3>
+            <p><strong>Id:</strong>
+                <a href="/brands/<%= product.brand.id %>">
+                    <%= product.brand.id %>
+                </a>
+            </p>
+            <p><strong>Founded: <%= product.brand.foundedYear %>
+            </p>
+            <p><strong>Premium: <%= product.brand.isPremium %>
+            </p>
+            <div class="detail-image">
+                <img src="<%= product.brand.logoUrl %>" alt="<%= product.brand.name %>">
+            </div>
+        </div>
 </body>
 
 </html>
