@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.get("/products", requireUser, async (req, res) => {
+app.get("/products", async (req, res) => {
 
     const productsCollection = getProductsCollection();
 
