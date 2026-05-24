@@ -411,4 +411,7 @@ nav ul li{
     .logout-btn{
         width: 30%;
     }
+    nav a{
+        width: 75%;
+    }
 }
