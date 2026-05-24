@@ -49,10 +49,6 @@ app.get("/", (req, res) => {
 
 app.get("/products", requireUser, async (req, res) => {
 
-    if (!req.session.user) {
-        return res.redirect("/login");
-    }
-
     const productsCollection = getProductsCollection();
 
     const products = await productsCollection.find().toArray();
@@ -202,9 +198,9 @@ app.get("/register", (req, res) => {
     res.render("register");
 });
 
-app.get("/debug-session", requireUser, (req, res) => {
-    res.json(req.session);
-});
+// app.get("/debug-session", requireUser, (req, res) => {
+//     res.json(req.session);
+// });
 
 app.post("/products/:id/edit", requireAdmin, async (req, res) => {
     const productsCollection = getProductsCollection();
