@@ -301,49 +301,21 @@ nav ul li{
 /* Mobile */
 
 @media (max-width: 768px) {
+
     body {
         padding: 10px;
     }
 
-    nav ul {
+    nav {
         flex-direction: column;
+        align-items: center;
         gap: 10px;
+        padding: 12px;
     }
 
-    nav a {
-        display: block;
-        text-align: center;
-    }
-
-    .card {
-        width: 95%;
-        padding: 15px;
-        margin: 15px auto;
-    }
-
-    form {
-        flex-direction: column;
-    }
-
-    form input {
-        width: 75%;
-        min-width: unset;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    form {
-    max-width: 400px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    }
     nav ul {
         flex-direction: column;
+        width: 100%;
         align-items: center;
         gap: 10px;
     }
@@ -357,5 +329,86 @@ nav ul li{
         display: block;
         width: 100%;
         padding: 12px;
+    }
+
+    .user-indicator {
+        position: static;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .card {
+        width: 95%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .barber {
+        padding: 30px 15px;
+        margin: 15px auto;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        max-width: 100%;
+        margin: 15px auto;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 75%;
+        max-width: 100%;
+    }
+
+    form input {
+        min-width: unset;
+    }
+
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .detail-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .back {
+        display: block;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .status-pill{
+        width: 20%;
+        text-align: center;
+    }
+
+    .user-indicator .status-pill{
+        align-items: center;
+    }
+
+    .logout-btn{
+        width: 30%;
     }
 }
