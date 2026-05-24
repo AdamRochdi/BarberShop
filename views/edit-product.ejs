@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>edit-product</title>
+</head>
+
+<body>
+    <%- include("partials/nav") %>
+        <h1>Edit product</h1>
+
+        <form method="POST" action="/products/<%= product.id %>/edit">
+
+            <label>Name</label>
+            <input name="name" value="<%= product.name %>" />
+
+            <label>Description</label>
+            <input name="description" value="<%= product.description %>" />
+
+            <label>Category</label>
+            <select name="category">
+                <option value="hair" <%=product.category==="hair" ? "selected" : "" %>>Hair</option>
+                <option value="beard" <%=product.category==="beard" ? "selected" : "" %>>Beard</option>
+                <option value="skin" <%=product.category==="skin" ? "selected" : "" %>>Skin</option>
+            </select>
+
+            <label>Active</label>
+            <select name="isActive">
+                <option value="true" <%=product.isActive ? "selected" : "" %>>Yes</option>
+                <option value="false" <%=!product.isActive ? "selected" : "" %>>No</option>
+            </select>
+
+            <label>Image URL</label>
+            <input name="imageUrl" value="<%= product.imageUrl %>" />
+
+            <button type="submit">Save</button>
+        </form>
+</body>
+
+</html>

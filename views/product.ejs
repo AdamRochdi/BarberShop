@@ -45,7 +45,10 @@
             <div class="detail-image">
                 <img src="<%= product.brand.logoUrl %>" alt="<%= product.brand.name %>">
             </div>
+
+            <a href="/products/<%= product.id %>/edit">Edit product</a>
         </div>
+        <%- include("partials/footer") %>
 </body>
 
 </html>

@@ -1,12 +1,15 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, Collection } from "mongodb";
+import { Character } from "./interface";
+import dotenv from "dotenv";
+dotenv.config();
 
-const client = new MongoClient("mongodb://127.0.0.1:27017");
+const client = new MongoClient(process.env.MONGODB_URI as string);
 
 const DATA_URL =
-    "https://raw.githubusercontent.com/AdamRochdi/BarberShop/main/data/products.json";
+    "https://raw.githubusercontent.com/AdamRochdi/BarberShop/refs/heads/main/public/data/products.json";
 
 let db: any;
-let productsCollection: any;
+let productsCollection: Collection<Character>;
 
 export async function initDatabase() {
     await client.connect();
