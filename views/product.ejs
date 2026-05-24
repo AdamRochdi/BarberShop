@@ -46,7 +46,9 @@
                 <img src="<%= product.brand.logoUrl %>" alt="<%= product.brand.name %>">
             </div>
 
-            <a href="/products/<%= product.id %>/edit">Edit product</a>
+            <% if (user && user.role==="ADMIN" ) { %>
+                <a href="/products/<%= product.id %>/edit">Edit product</a>
+                <% } %>
         </div>
         <%- include("partials/footer") %>
 </body>

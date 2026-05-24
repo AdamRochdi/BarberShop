@@ -4,4 +4,26 @@
         <li><a href="/products">Cards</a></li>
         <li><a href="/brands">Brands</a></li>
     </ul>
+    <div class="user-indicator">
+        <% if (!user) { %>
+            <div class="status-pill guest">
+                Guest
+            </div>
+            <% } else if (user.role==="ADMIN" ) { %>
+                <div class="status-pill admin">
+                    <span class="dot"></span>
+                    Admin
+                </div>
+
+                <a class="logout-btn" href="/logout">Logout</a>
+
+                <% } else { %>
+                    <div class="status-pill user">
+                        <span class="dot"></span>
+                        User
+                    </div>
+
+                    <a class="logout-btn" href="/logout">Logout</a>
+                    <% } %>
+    </div>
 </nav>

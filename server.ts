@@ -1,6 +1,19 @@
 import express from "express";
-import { initDatabase, getProductsCollection } from "./database";
+import { initDatabase, getProductsCollection, getUsersCollection } from "./database";
 import dotenv from "dotenv";
+import bcrypt from "bcrypt";
+import { sessionMiddleware } from "./sessions";
+
+
+declare module "express-session" {
+    interface SessionData {
+        user?: {
+            id: string;
+            username: string;
+            role: string;
+        };
+    }
+}
 
 dotenv.config();
 const app = express();
@@ -9,26 +22,36 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
+app.use(sessionMiddleware);
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.user || null;
+    next();
+});
 
-// const DATA_URL_PRODUCTS = "https://raw.githubusercontent.com/AdamRochdi/BarberShop/refs/heads/main/public/data/products.json";
-// const DATA_URL_BRANDS = "https://raw.githubusercontent.com/AdamRochdi/BarberShop/refs/heads/main/public/data/brands.json";
+function requireUser(req: any, res: any, next: any) {
+    if (!req.session.user) {
+        return res.redirect("/login");
+    }
+    next();
+}
 
-// async function getProducts() {
-//     const res = await fetch(DATA_URL_PRODUCTS);
-//     return await res.json();
-// }
-
-// async function getBrands() {
-//     const res = await fetch(DATA_URL_BRANDS);
-//     return await res.json();
-// }
+function requireAdmin(req: any, res: any, next: any) {
+    if (!req.session.user || req.session.user.role !== "ADMIN") {
+        return res.status(403).send("Forbidden");
+    }
+    next();
+}
 
 app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.get("/products", async (req, res) => {
+app.get("/products", requireUser, async (req, res) => {
+
+    if (!req.session.user) {
+        return res.redirect("/login");
+    }
 
     const productsCollection = getProductsCollection();
 
@@ -74,6 +97,7 @@ app.get("/products", async (req, res) => {
         });
     }
 
+
     res.render("products", {
         products: filteredProducts,
         sort,
@@ -81,7 +105,7 @@ app.get("/products", async (req, res) => {
     });
 });
 
-app.get("/brands", async (req, res) => {
+app.get("/brands", requireUser, async (req, res) => {
     const productsCollection = getProductsCollection();
 
     const products = await productsCollection.find().toArray();
@@ -118,7 +142,7 @@ app.get("/brands", async (req, res) => {
     });
 })
 
-app.get("/products/:id", async (req, res) => {
+app.get("/products/:id", requireUser, async (req, res) => {
 
     const productsCollection = getProductsCollection();
 
@@ -133,7 +157,7 @@ app.get("/products/:id", async (req, res) => {
     res.render("product", { product });
 });
 
-app.get("/brands/:id", async (req, res) => {
+app.get("/brands/:id", requireUser, async (req, res) => {
     const productsCollection = getProductsCollection();
     const products = await productsCollection.find().toArray();
 
@@ -146,7 +170,7 @@ app.get("/brands/:id", async (req, res) => {
     res.render("brand", { brand: product.brand });
 });
 
-app.get("/products/:id/edit", async (req, res) => {
+app.get("/products/:id/edit", requireAdmin, async (req, res) => {
     const productsCollection = getProductsCollection();
 
     const product = await productsCollection.findOne({
@@ -160,7 +184,29 @@ app.get("/products/:id/edit", async (req, res) => {
     res.render("edit-product", { product });
 });
 
-app.post("/products/:id/edit", async (req, res) => {
+
+app.get("/login", (req, res) => {
+    res.render("login");
+});
+
+app.get("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/login");
+    });
+});
+
+app.get("/register", (req, res) => {
+    if (req.session.user) {
+        return res.redirect("/products");
+    }
+    res.render("register");
+});
+
+app.get("/debug-session", requireUser, (req, res) => {
+    res.json(req.session);
+});
+
+app.post("/products/:id/edit", requireAdmin, async (req, res) => {
     const productsCollection = getProductsCollection();
 
     await productsCollection.updateOne(
@@ -178,14 +224,82 @@ app.post("/products/:id/edit", async (req, res) => {
 
     res.redirect("/products/" + req.params.id);
 });
+
+app.post("/login", async (req, res) => {
+    const usersCollection = getUsersCollection();
+
+    const user = await usersCollection.findOne({
+        username: req.body.username
+    });
+
+    if (!user) {
+        return res.render("login", { error: "User not found" });
+    }
+
+    const passwordMatch = await bcrypt.compare(
+        req.body.password,
+        user.password
+    );
+
+    if (!passwordMatch) {
+        return res.render("login", { error: "Wrong password" });
+    }
+
+    req.session.user = {
+        id: user._id,
+        username: user.username,
+        role: user.role
+    };
+
+    res.redirect("/products");
+});
+
+app.post("/register", async (req, res) => {
+    const usersCollection = getUsersCollection();
+
+    const existingUser = await usersCollection.findOne({
+        username: req.body.username
+    });
+
+    if (existingUser) {
+        return res.render("register", { error: "Username already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    await usersCollection.insertOne({
+        username: req.body.username,
+        password: hashedPassword,
+        role: "USER"
+    });
+
+    res.redirect("/login");
+});
+
+
 initDatabase()
-    .then(() => {
+    .then(async () => {
         console.log("MongoDB connected");
+
+        const productsCollection = getProductsCollection();
+        const productCount = await productsCollection.countDocuments();
+
+        if (productCount === 0) {
+            console.log("Database seeded (products)");
+        } else {
+            console.log("Products already exist");
+        }
+
+        const usersCollection = getUsersCollection();
+        const userCount = await usersCollection.countDocuments();
+
+        if (userCount === 0) {
+            console.log("Default users created");
+        } else {
+            console.log("Users already exist");
+        }
 
         app.listen(3000, () => {
             console.log("server running");
         });
     })
-    .catch((err) => {
-        console.error("MongoDB error", err);
-    });

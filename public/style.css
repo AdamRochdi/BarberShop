@@ -233,3 +233,66 @@ nav ul li{
     color: #261311;
 }
 
+/* Login */
+.user-indicator {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+}
+
+.status-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: white;
+}
+
+.status-pill .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.guest {
+    background: #c0392b;
+}
+
+.user {
+    background: #27ae60;
+}
+
+.admin {
+    background: #2980b9;
+}
+
+.user .dot {
+    background: #a8f0c6;
+}
+
+.admin .dot {
+    background: #a9d6ff;
+}
+
+.guest .dot {
+    background: #ffb3b3;
+}
+
+/* Logout */
+.logout-btn {
+    display: block;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: #000;
+}
